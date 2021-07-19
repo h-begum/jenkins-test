@@ -33,10 +33,10 @@
     <username>${anypoint.username}</username>
     <password>${anypoint.password}</password>
     <!-- Environment Parameter -->
-    <environment>${cloudhub.environment}</environment>
-    <applicationName>${cloudhub.app}</applicationName>
-    <businessGroup>${cloudhub.bg}</businessGroup>
-    <workerType>${cloudhub.worker}</workerType>
+    <environment>Sandbox</environment>
+    <applicationName>jenkins-test-sd</applicationName>
+    <businessGroup>jt</businessGroup>
+    <workerType>Micro</workerType>
     <objectStoreV2>true</objectStoreV2>
 </cloudHubDeployment>
 				</configuration>
