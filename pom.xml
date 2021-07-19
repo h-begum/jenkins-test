@@ -98,7 +98,7 @@
     </repositories>
     <pluginRepositories>
         <pluginRepository>
-            <id>mulesoft-releases</id>
+            <id>mulesoft-public</id>
             <name>mulesoft release repository</name>
             <layout>default</layout>
             <url>https://repository.mulesoft.org/nexus/content/repositories/releases</url>
