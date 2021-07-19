@@ -5,7 +5,12 @@ pipeline {
       steps {
         bat 'mvn clean test'
       }
-    }
+      }
+     stage('Build Application') { 
+      steps {
+        bat 'mvn clean install'
+      }
+      }
     stage('Deploy CloudHub') { 
       environment {
         ANYPOINT_CREDENTIALS = credentials('deploy-anypoint-user')
