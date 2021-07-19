@@ -26,19 +26,6 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
-				<cloudHubDeployment>
-    <uri>https://anypoint.mulesoft.com</uri>
-    <muleVersion>${mule.version}</muleVersion>
-    <!-- Deploy User Parameter -->
-    <username>${anypoint.username}</username>
-    <password>${anypoint.password}</password>
-    <!-- Environment Parameter -->
-    <environment>Sandbox</environment>
-    <applicationName>jenkins-test-sd</applicationName>
-    <businessGroup>jt</businessGroup>
-    <workerType>Micro</workerType>
-    <objectStoreV2>true</objectStoreV2>
-</cloudHubDeployment>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -58,6 +45,42 @@
             <classifier>mule-plugin</classifier>
         </dependency>
 	</dependencies>
+	<profiles>
+			<profile>
+			<id>cloudhub</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.mule.tools.maven</groupId>
+						<artifactId>mule-maven-plugin</artifactId>
+						<configuration>
+							<cloudHubDeployment>
+								<muleVersion>${mule.version}</muleVersion>
+								<username>${anypoint.username}</username>
+								<password>${anypoint.password}</password>
+								<applicationName>${artifactId}-${maven.build.timestamp}</applicationName>
+								<environment>${cloundhub.env}</environment>
+								<businessGroup>${anypoint.businessGroup}</businessGroup>
+								<region>${cloudhub.region}</region>
+								<uri>${anypoint.uri}</uri>
+								<workerType>${cloudhub.workerType}</workerType>
+								<workers>${cloudhub.workers}</workers>
+							</cloudHubDeployment>
+						</configuration>
+						<executions>
+							<execution>
+								<id>deploy</id>
+								<phase>deploy</phase>
+								<goals>
+									<goal>deploy</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 
 	<repositories>
           <repository>
