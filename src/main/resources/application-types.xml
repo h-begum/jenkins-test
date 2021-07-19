@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<types:mule xmlns:types="http://www.mulesoft.org/schema/mule/types">
+  <types:catalog>
+    <types:type name="Data" format="json">
+      <types:shape format="weave" example="examples/New Text Document.txt"><![CDATA[%dw 2.0
+
+type Data = Array<{|  currency: String,   country: String|}> {"example": "[{\"currency\":\"USD\"},{\"currency\":\"INR\"},{\"currency\":\"CAD\"},{\"country\":\"US\"},{\"country\":\"INDIA\"},{\"country\":\"CANADA\"}]"}
+
+]]></types:shape>
+    </types:type>
+  </types:catalog>
+  <types:enrichment select="#1f3e29be-f04f-4c70-95d0-aed986181210">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="Data"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+</types:mule>

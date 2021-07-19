@@ -1,0 +1,22 @@
+[
+
+{
+"currency": "USD"
+},
+{
+"currency": "INR"
+},
+{
+"currency": "CAD"
+},
+{
+"country": "US"
+},
+{
+"country": "INDIA"
+},
+{
+"country": "CANADA"
+}
+
+]
