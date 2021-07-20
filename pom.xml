@@ -46,6 +46,7 @@
 			      <environment>Sandbox</environment>   
 			      <workers>1</workers>
 			      <workerType>MICRO</workerType>
+			      <objectStoreV2>true</objectStoreV2>
 			      <properties>
 				    <maven.compiler.target>1.8</maven.compiler.target>
 				    <maven.compiler.source>1.8</maven.compiler.source>
