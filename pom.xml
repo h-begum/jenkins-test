@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.mycompany</groupId>
-	<artifactId>demo-test</artifactId>
+	<artifactId>jenkins-test</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>mule-application</packaging>
 
@@ -13,8 +13,8 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-		<app.runtime>4.3.0</app.runtime>
-		<mule.maven.plugin.version>3.4.1</mule.maven.plugin.version>
+		<app.runtime>4.3.0-20210622</app.runtime>
+		<mule.maven.plugin.version>2.3.3</mule.maven.plugin.version>
 	</properties>
 
 	<build>
@@ -44,40 +44,7 @@
             <classifier>mule-plugin</classifier>
         </dependency>
 	</dependencies>
-	<profiles>
-			<profile>
-			<id>cloudhub</id>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.mule.tools.maven</groupId>
-						<artifactId>mule-maven-plugin</artifactId>
-						<configuration>
-							<cloudHubDeployment>
-								<muleVersion>${mule.version}</muleVersion>
-								<username>jenkinstest19</username>
-								<password>Jenkinstest19</password>
-								<applicationName>${artifactId}-sd-123</applicationName>
-								<environment>Sandbox</environment>
-								<businessGroup>jt</businessGroup>
-								
-								<uri>https://anypoint.mulesoft.com</uri>
-							</cloudHubDeployment>
-						</configuration>
-						<executions>
-							<execution>
-								<id>deploy</id>
-								<phase>deploy</phase>
-								<goals>
-									<goal>deploy</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
+	
 	<distributionManagement>
     <repository>
         <uniqueVersion>false</uniqueVersion>
