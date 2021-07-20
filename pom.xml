@@ -13,18 +13,36 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-		<app.runtime>4.3.0-20210622</app.runtime>
-		<mule.maven.plugin.version>2.3.3</mule.maven.plugin.version>
+		<app.runtime>4.3.0</app.runtime>
+		<mule.maven.plugin.version>3.3.5</mule.maven.plugin.version>
 	</properties>
 
 	<build>
 		<plugins>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>3.0.0</version>
+			</plugin>
+			<plugin>
 				<groupId>org.mule.tools.maven</groupId>
 				<artifactId>mule-maven-plugin</artifactId>
-				<version>${mule.maven.plugin.version}</version>
+				<version>3.3.5</version>
 				<extensions>true</extensions>
 				<configuration>
+				<cloudHubDeployment>
+			      <muleVersion>4.3.0</muleVersion>
+			      <username>${anypoint.username}</username>
+			      <password>${anypoint.password}</password>
+			      <applicationName>jenkins-test-123456789</applicationName>
+			      <environment>Sandbox</environment>   
+			      <workers>1</workers>
+			      <workerType>MICRO</workerType>
+			      <properties>
+				    <maven.compiler.target>1.8</maven.compiler.target>
+				    <maven.compiler.source>1.8</maven.compiler.source>
+				</properties>
+			    </cloudHubDeployment>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -78,10 +96,5 @@
                 <enabled>false</enabled>
             </snapshots>
         </pluginRepository>
-        <pluginRepository>
-            <id>mule-public</id>
-            <url>https://repository.mulesoft.org/nexus/content/repositories/releases</url>
-        </pluginRepository>
     </pluginRepositories>
-
 </project>
