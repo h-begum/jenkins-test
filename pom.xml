@@ -75,11 +75,11 @@
 	<distributionManagement>
 		<snapshotRepository>
 			<id>nexus-snapshots</id>
-			<url>http://localhost:8081/repository/maven-snapshots/</url>
+			<url>http://413369c71a55.ngrok.io/repository/maven-snapshots/</url>
 		</snapshotRepository>
 		<repository>
 			<id>nexus-releases</id>
-			<url>http://localhost:8081/repository/maven-releases/</url>
+			<url>http://413369c71a55.ngrok.io/repository/maven-releases/</url>
 		</repository>
 	</distributionManagement>
 	<repositories>
@@ -97,7 +97,7 @@
 		</repository>
 		<repository>
 			<id>maven-group</id>
-			<url>http://localhost:8081/repository/maven-group/</url>
+			<url>http://413369c71a55.ngrok.io/repository/maven-group/</url>
 		</repository>
 	</repositories>
 	<pluginRepositories>
